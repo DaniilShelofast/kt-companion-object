@@ -9,6 +9,6 @@ object LetterRemover {
     @JvmStatic
     fun removeLetter(input: String): CharArray = input
         .lowercase()
-        .replace('r', '!', true)
+        .replace('r', '!')
         .toCharArray()
 }
