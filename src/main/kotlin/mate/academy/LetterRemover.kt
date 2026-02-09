@@ -5,18 +5,12 @@ fun main() {
     println(LetterRemover.removeLetter(input).contentToString())
 }
 
-object LetterRemover {
-    @JvmStatic
-    fun removeLetter(input: String): CharArray {
-        val chars = input.lowercase().toCharArray()
-        val result = CharArray(chars.size)
-        for (i in chars.indices) {
-            if (chars[i] == 'r' || chars[i] == 'R') {
-                result[i] = '!'
-            } else {
-                result[i] = chars[i]
-            }
-        }
-        return result
+class LetterRemover {
+    companion object {
+        @JvmStatic
+        fun removeLetter(input: String): CharArray = input
+            .lowercase()
+            .replace('r', '!', true)
+            .toCharArray()
     }
 }
